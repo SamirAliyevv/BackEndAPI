@@ -1,0 +1,17 @@
+C:\Users\user\Desktop\API_Task\API\ShoppApi.Data\bin\Debug\net6.0\ShoppApi.Data.deps.json
+C:\Users\user\Desktop\API_Task\API\ShoppApi.Data\bin\Debug\net6.0\ShoppApi.Data.dll
+C:\Users\user\Desktop\API_Task\API\ShoppApi.Data\bin\Debug\net6.0\ShoppApi.Data.pdb
+C:\Users\user\Desktop\API_Task\API\ShoppApi.Data\bin\Debug\net6.0\ShopApp.core.dll
+C:\Users\user\Desktop\API_Task\API\ShoppApi.Data\bin\Debug\net6.0\ShopApp.core.pdb
+C:\Users\user\Desktop\API_Task\API\ShoppApi.Data\obj\Debug\net6.0\ShoppApi.Data.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\API_Task\API\ShoppApi.Data\obj\Debug\net6.0\ShoppApi.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\API_Task\API\ShoppApi.Data\obj\Debug\net6.0\ShoppApi.Data.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\API_Task\API\ShoppApi.Data\obj\Debug\net6.0\ShoppApi.Data.AssemblyInfo.cs
+C:\Users\user\Desktop\API_Task\API\ShoppApi.Data\obj\Debug\net6.0\ShoppApi.Data.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\API_Task\API\ShoppApi.Data\obj\Debug\net6.0\ShoppApi.Data.csproj.CopyComplete
+C:\Users\user\Desktop\API_Task\API\ShoppApi.Data\obj\Debug\net6.0\ShoppApi.Data.dll
+C:\Users\user\Desktop\API_Task\API\ShoppApi.Data\obj\Debug\net6.0\refint\ShoppApi.Data.dll
+C:\Users\user\Desktop\API_Task\API\ShoppApi.Data\obj\Debug\net6.0\ShoppApi.Data.pdb
+C:\Users\user\Desktop\API_Task\API\ShoppApi.Data\obj\Debug\net6.0\ref\ShoppApi.Data.dll
+C:\Users\user\Desktop\API_Task\API\ShoppApi.Data\bin\Debug\net6.0\ShoppApi.Data.runtimeconfig.json
+C:\Users\user\Desktop\API_Task\API\ShoppApi.Data\obj\Debug\net6.0\ShoppApi.Data.genruntimeconfig.cache

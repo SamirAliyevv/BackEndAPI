@@ -1,8 +1,9 @@
-﻿using API.DAL;
-using Microsoft.AspNetCore.Http;
-using API.Models;
-using Microsoft.AspNetCore.Mvc;
-using API.Dtos.ProductDtos;
+﻿using API.Service.Dtos.ProductDtos;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+    using ShopApp.core.Entities;
+    using ShopApp.core.Repositories;
+    using ShoppApi.Data;
 
 namespace API.Controllers
 {
@@ -10,76 +11,111 @@ namespace API.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly ApiDbContext _context;
-        public ProductsController(  ApiDbContext context)
+
+        private readonly IProductRepositories _productRepositories;
+
+        private readonly IBrandRepositories _brandRepositories;
+        public ProductsController(IProductRepositories productRepositories, IBrandRepositories brandRepositories)
         {
-            _context = context;
+            _productRepositories = productRepositories;
+            _brandRepositories = brandRepositories;
         }
-        [HttpGet]
-        [Route("all")]
-        public ActionResult<List<ProductListitemdto>> GetAll()
-        {
 
-            var data = _context.Products.Select(x => new ProductListitemdto
-            {
-                Name = x.Name,
-                Id = x.Id
 
-            }).ToList();
-
-            return Ok(data);
-        }
-        [HttpGet]
-        [Route("{id}")]
-        public ActionResult<Productgetitem> Get(int id)
-        {
-
-            var entity = _context.Products.Find(id);
-            if (entity == null) return StatusCode(404);
-            var data = new Productgetitem
-            {
-                Name = entity.Name,
-                SalePrice = entity.SalePrice,
-                CostPrice = entity.CostPrice,
-            };
-
-            return Ok(data);
-        }
         [HttpPost]
         [Route("")]
-        public IActionResult Create(ProductCreateDto createDto)
+        public IActionResult Create(ProductCreatDto dto)
         {
-            Product entity = new Product
+            if (!_brandRepositories.IsExists(x => x.Id == dto.BrandId))
             {
-                Name = createDto.Name,    
-                SalePrice = createDto.SalePrice,  
-                CostPrice = createDto.CostPrice,
+                ModelState.AddModelError("BrandId", $"Brand not found by Id {dto.BrandId}");
+                return BadRequest(ModelState);
+            }
+
+            Product product = new Product
+
+            {
+                BrandId = dto.BrandId,
+                Name = dto.Name,
+                SalePrice = dto.SalePrice,
+                CostPrice = dto.CostPrice,
+                CreadAt = DateTime.UtcNow.AddHours(4),
+                ModifiedAt = DateTime.UtcNow.AddHours(4)
+            };
+            _productRepositories.Add(product);
+            _productRepositories.Commit();
+            return StatusCode(200, new { Id = product.Id });
+
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public ActionResult<ProductGetDto> Get(int id)
+        {
+
+            Product product = _productRepositories.Get(x => x.Id == id, "Brand");
+
+            if (product == null) return NotFound();
+
+
+            ProductGetDto productGetDto = new ProductGetDto
+            {
+                Name = product.Name,
+                SalePrice = product.SalePrice,
+                CostPrice = product.CostPrice,
+                Brand = new ProductGetDtoBrandIn
+                {
+                    Id = product.BrandId,
+                    Name = product.Brand.Name
+
+                }
 
             };
-               _context.Products.Add(entity);
-              _context.SaveChanges();
 
-             return StatusCode(201, new {id = entity.Id});
+            return Ok(productGetDto);
         }
+
 
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Edit(int id,ProductUpdatedto dto)
+        public IActionResult Edit(int id, ProductEditDto dto)
         {
-            var entity = _context.Products.Find(id);
+            Product product = _productRepositories.Get(x => x.Id == id);
 
-            if (entity == null) return StatusCode(404);
+            if (product == null) return NotFound();
 
-            entity.Name = dto.Name;
-            entity.SalePrice = dto.SalePrice;   
-            entity.CostPrice = dto.CostPrice;   
-            
-            _context.SaveChanges();
+            if (product.Name != dto.Name && _productRepositories.IsExists(x => x.Name == dto.Name))
+            {
+                ModelState.AddModelError("Name", "Name is already token");
+                return BadRequest(ModelState);
 
 
+            }
+            product.Name = dto.Name;
+            _productRepositories.Commit();
             return NoContent();
 
         }
 
+
+
+        [HttpDelete]
+        [Route("{id}")]
+
+        public IActionResult Delete(int id)
+        {
+            Product product = _productRepositories.Get(x => x.Id == id);
+
+            if (product == null) return NotFound();
+
+            _productRepositories.Delete(product);
+            _productRepositories.Commit();
+            return NoContent();
+
+
+        }
+
+
     }
+
 }

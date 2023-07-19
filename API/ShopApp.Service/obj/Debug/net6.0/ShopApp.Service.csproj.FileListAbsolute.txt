@@ -1,0 +1,17 @@
+C:\Users\user\Desktop\API_Task\API\ShopApp.Service\bin\Debug\net6.0\ShopApp.Service.deps.json
+C:\Users\user\Desktop\API_Task\API\ShopApp.Service\bin\Debug\net6.0\ShopApp.Service.dll
+C:\Users\user\Desktop\API_Task\API\ShopApp.Service\bin\Debug\net6.0\ShopApp.Service.pdb
+C:\Users\user\Desktop\API_Task\API\ShopApp.Service\bin\Debug\net6.0\ShopApp.core.dll
+C:\Users\user\Desktop\API_Task\API\ShopApp.Service\bin\Debug\net6.0\ShoppApi.Data.dll
+C:\Users\user\Desktop\API_Task\API\ShopApp.Service\bin\Debug\net6.0\ShoppApi.Data.pdb
+C:\Users\user\Desktop\API_Task\API\ShopApp.Service\bin\Debug\net6.0\ShopApp.core.pdb
+C:\Users\user\Desktop\API_Task\API\ShopApp.Service\obj\Debug\net6.0\ShopApp.Service.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\API_Task\API\ShopApp.Service\obj\Debug\net6.0\ShopApp.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\API_Task\API\ShopApp.Service\obj\Debug\net6.0\ShopApp.Service.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\API_Task\API\ShopApp.Service\obj\Debug\net6.0\ShopApp.Service.AssemblyInfo.cs
+C:\Users\user\Desktop\API_Task\API\ShopApp.Service\obj\Debug\net6.0\ShopApp.Service.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\API_Task\API\ShopApp.Service\obj\Debug\net6.0\ShopApp.Service.csproj.CopyComplete
+C:\Users\user\Desktop\API_Task\API\ShopApp.Service\obj\Debug\net6.0\ShopApp.Service.dll
+C:\Users\user\Desktop\API_Task\API\ShopApp.Service\obj\Debug\net6.0\refint\ShopApp.Service.dll
+C:\Users\user\Desktop\API_Task\API\ShopApp.Service\obj\Debug\net6.0\ShopApp.Service.pdb
+C:\Users\user\Desktop\API_Task\API\ShopApp.Service\obj\Debug\net6.0\ref\ShopApp.Service.dll
