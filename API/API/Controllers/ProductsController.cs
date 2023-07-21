@@ -1,4 +1,4 @@
-﻿using API.Service.Dtos.ProductDtos;
+﻿    using API.Service.Dtos.ProductDtos;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     using ShopApp.core.Entities;
@@ -74,6 +74,12 @@ namespace API.Controllers
 
             return Ok(productGetDto);
         }
+
+        //[HttpGet]
+        //[Route("all")]
+
+        //public IActionResult
+
 
 
         [HttpPut]
